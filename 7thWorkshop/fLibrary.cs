@@ -1332,5 +1332,10 @@ They will be automatically turned off.";
             fReadme.Display(details, "Profile Details");
         }
 
+        public void externalLaunch(bool debug, bool varDump)
+        {
+            Launch(debug, varDump);
+        }
+
     }
 }
