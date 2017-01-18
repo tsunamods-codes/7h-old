@@ -14,43 +14,59 @@
         <TextBox x:Name="version" HorizontalAlignment="Left" Height="24.333" Margin="930,704.667,0,0" TextWrapping="Wrap" Text="V 1.0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderThickness="0" FontSize="18" FontFamily="Swis721 BT"/>
         <Button x:Name="update" Content="Update" HorizontalAlignment="Left" Height="85" Margin="37.5,630.05,0,0" VerticalAlignment="Top" Width="295" Background="#BF000000" BorderBrush="Black" FontFamily="Swis721 BlkCn BT" FontWeight="Bold" FontSize="48" BorderThickness="0" Foreground="#BFFF6800"/>
         <Button x:Name="launch" Content="Launch" HorizontalAlignment="Left" Height="85" Margin="670,630.05,0,0" VerticalAlignment="Top" Width="295" Click="bLaunch" Background="#BF000000" BorderBrush="Black" FontFamily="Swis721 BlkCn BT" FontWeight="Bold" FontSize="48" BorderThickness="0" Foreground="#BFFF6800"/>
-        <TextBox x:Name="title_name" Height="62.5" Margin="60,10,488.5,0" TextWrapping="Wrap" Text="OVA Remake" VerticalAlignment="Top" FontFamily="Swis721 BlkEx BT" FontSize="48" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="#BFFF6800"/>
         <TabControl x:Name="tabControl" Margin="37.5,72.5,53,143">
             <TabItem Header="Main">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid>
+                    <ScrollViewer Margin="10,10,10,65.5" Background="Black">
+                        <Grid Height="1036.488" Width="788.452"/>
+                    </ScrollViewer>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="16.5" Margin="80.833,0,0,44" TextWrapping="Wrap" Text="Difficulty:" VerticalAlignment="Bottom" Width="62.167" FontFamily="Swis721 BlkCn BT" FontSize="14"/>
+                    <RadioButton x:Name="dif_easy" Content="Easy" HorizontalAlignment="Left" Height="15.25" Margin="148,0,0,44.25" VerticalAlignment="Bottom" Width="79.75" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="difficulty"/>
+                    <RadioButton x:Name="dif_normal" Content="Normal" HorizontalAlignment="Left" Height="15.25" Margin="148,0,0,29" VerticalAlignment="Bottom" Width="79.75" RenderTransformOrigin="0.492,1.956" FontFamily="Swis721 BlkCn BT" FontSize="14" IsChecked="True" GroupName="difficulty"/>
+                    <RadioButton x:Name="dif_hard" Content="Hard" HorizontalAlignment="Left" Height="15.25" Margin="148,0,0,13.75" VerticalAlignment="Bottom" Width="79.75" RenderTransformOrigin="0.492,1.956" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="difficulty"/>
+                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="18.427" Margin="283.5,0,0,44" TextWrapping="Wrap" Text="Language:" VerticalAlignment="Bottom" Width="70.5" FontSize="16" FontFamily="Swis721 BlkCn BT"/>
+                    <RadioButton x:Name="lang_en" Content="English" HorizontalAlignment="Left" Height="15.25" Margin="359,0,0,44.25" VerticalAlignment="Bottom" Width="79.75" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="lang" IsChecked="True"/>
+                    <RadioButton x:Name="lang_es" Content="Spanish" HorizontalAlignment="Left" Height="15.25" Margin="359,0,0,29" VerticalAlignment="Bottom" Width="79.75" RenderTransformOrigin="0.492,1.956" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="lang"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Field">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="51*"/>
+                        <ColumnDefinition Width="410*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
             </TabItem>
             <TabItem Header="World Map">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid/>
             </TabItem>
             <TabItem Header="Battle">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid/>
             </TabItem>
             <TabItem Header="Mini Game">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid/>
             </TabItem>
             <TabItem Header="Music">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid/>
             </TabItem>
             <TabItem Header="Videos">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Margin="0,-1.333,0,1.333"/>
             </TabItem>
             <TabItem Header="Options">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid/>
             </TabItem>
             <TabItem Header="Web">
-                <Grid Background="#FFE5E5E5">
+                <Grid>
                     <awe:WebControl x:Name="webView" Margin="10" Source="http://ovaremake.mooo.com/" d:LayoutOverrides="VerticalAlignment"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Profiles">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid/>
             </TabItem>
             <TabItem Header="Credits">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid/>
             </TabItem>
         </TabControl>
+        <TextBlock x:Name="game_name" Height="57.5" Margin="57,10,491,0" TextWrapping="Wrap" Text="OVA Remake" VerticalAlignment="Top" Foreground="#FFA86B00" FontSize="48" FontFamily="Swis721 BlkEx BT"/>
     </Grid>
 </Window>
