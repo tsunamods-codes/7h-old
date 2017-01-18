@@ -13,9 +13,11 @@ namespace Launcher
     /// </summary>
     public partial class MainWindow : Window
     {
+        private fLibrary fLib;
         public MainWindow()
         {
             InitializeComponent();
+            fLib = new fLibrary();
         }
         
         // This will be set to the target URL, when this window does not
@@ -70,15 +72,9 @@ namespace Launcher
         public static readonly DependencyProperty IsRegularWindowProperty =
             IsRegularWindowPropertyKey.DependencyProperty;
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         private void bLaunch(object sender, RoutedEventArgs e)
         {
-            fLibrary fLib = new fLibrary();
-            fLib.externalLaunch(false, false);
+           fLib.externalLaunch(false, false);
         }
     }
 }

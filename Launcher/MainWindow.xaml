@@ -4,14 +4,50 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Launcher"
-        xmlns:awe="http://schemas.awesomium.com/winfx" x:Class="Launcher.MainWindow"
+        xmlns:awe="http://schemas.awesomium.com/winfx" x:Name="launcher" x:Class="Launcher.MainWindow"
         mc:Ignorable="d"
         Title="OVA Remake Launcher" Height="768" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Pictures/Cloud.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <awe:WebControl Margin="10,10,0,10" HorizontalAlignment="Left" Width="690" Source="http://ovaremake.mooo.com/"/>
-        <Button x:Name="button" Content="Launch" HorizontalAlignment="Left" Height="85" Margin="755,625,0,0" VerticalAlignment="Top" Width="220" Click="bLaunch" Background="#7F000000" BorderBrush="Black" FontFamily="Swis721 BlkCn BT" FontWeight="Bold" FontSize="48"/>
+        <TextBox x:Name="version" HorizontalAlignment="Left" Height="24.333" Margin="930,704.667,0,0" TextWrapping="Wrap" Text="V 1.0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderThickness="0" FontSize="18" FontFamily="Swis721 BT"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="467.5" Margin="60,77.5,0,0" VerticalAlignment="Top" Width="905" Background="White" BorderBrush="#FFACACAC" Foreground="Black">
+            <TabItem x:Name="main" Header="Main">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="options1" Header="Options">
+                <Grid Background="#FFE5E5E5">
+                    <Grid HorizontalAlignment="Left" Height="487.04" Margin="10,10,0,0" VerticalAlignment="Top" Width="972" Background="#3F000000">
+                        <CheckBox x:Name="fullscreen" Content="FullScreen" HorizontalAlignment="Left" Height="15" Margin="80,420,0,0" VerticalAlignment="Top" Width="110" FontFamily="Swis721 BT" FontSize="14"/>
+                        <TextBox x:Name="options" HorizontalAlignment="Center" Height="50" TextWrapping="Wrap" Text="Options" VerticalAlignment="Top" Width="145" Background="{x:Null}" BorderThickness="0" Margin="60,10,60,0" FontFamily="Swis721 BlkCn BT" FontSize="42" TextDecorations="Underline"/>
+                        <TextBox x:Name="music" HorizontalAlignment="Center" Height="25" Margin="43,80,135,0" TextWrapping="Wrap" Text="Music:" VerticalAlignment="Top" Width="117" Background="{x:Null}" FontFamily="Swis721 BlkCn BT" FontSize="18" BorderBrush="{x:Null}" BorderThickness="0"/>
+                        <RadioButton x:Name="music_original" Content="Original" HorizontalAlignment="Left" Height="15" Margin="103,115,0,0" VerticalAlignment="Top" Width="162" Background="White" FontFamily="Swis721 BT" FontSize="14" GroupName="music" IsChecked="True"/>
+                        <RadioButton x:Name="music_orchestra" Content="Orchestra" HorizontalAlignment="Left" Height="15" Margin="103,130,0,0" VerticalAlignment="Top" Width="162" Background="White" FontFamily="Swis721 BT" FontSize="14" GroupName="music"/>
+                        <RadioButton x:Name="music_custom" Content="OVA Custom" HorizontalAlignment="Left" Height="15" Margin="103,145,0,0" VerticalAlignment="Top" Width="162" Background="White" FontFamily="Swis721 BT" FontSize="14" GroupName="music"/>
+                        <TextBox x:Name="background" HorizontalAlignment="Center" Height="25" Margin="43,175,65,0" TextWrapping="Wrap" Text="Field Background:" VerticalAlignment="Top" Width="187" Background="{x:Null}" FontFamily="Swis721 BlkCn BT" FontSize="18" BorderBrush="{x:Null}" BorderThickness="0"/>
+                        <RadioButton x:Name="background_original" Content="Original" HorizontalAlignment="Left" Height="15" Margin="103,210,0,0" VerticalAlignment="Top" Width="162" Background="White" FontFamily="Swis721 BT" FontSize="14" GroupName="background" IsChecked="True"/>
+                        <RadioButton x:Name="background_hd" Content="HD" HorizontalAlignment="Left" Height="15" Margin="103,225,0,0" VerticalAlignment="Top" Width="162" Background="White" FontFamily="Swis721 BT" FontSize="14" GroupName="background"/>
+                        <TextBox x:Name="video" HorizontalAlignment="Center" Height="25" Margin="43,350,65,0" TextWrapping="Wrap" Text="Video Settings:" VerticalAlignment="Top" Width="187" Background="{x:Null}" FontFamily="Swis721 BlkCn BT" FontSize="18" BorderBrush="{x:Null}" BorderThickness="0"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="web" Header="Web">
+                <Grid Background="#FFE5E5E5">
+                    <awe:WebControl x:Name="webView" Margin="10" Source="http://ovaremake.mooo.com/" d:LayoutOverrides="VerticalAlignment"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="credits" Header="Credits">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFE5E5E5" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="update" Content="Update" HorizontalAlignment="Left" Height="85" Margin="60,605,0,0" VerticalAlignment="Top" Width="295" Background="#BF000000" BorderBrush="Black" FontFamily="Swis721 BlkCn BT" FontWeight="Bold" FontSize="48" BorderThickness="0" Foreground="#BFFF6800"/>
+        <Button x:Name="launch" Content="Launch" HorizontalAlignment="Left" Height="85" Margin="670,605,0,0" VerticalAlignment="Top" Width="295" Click="bLaunch" Background="#BF000000" BorderBrush="Black" FontFamily="Swis721 BlkCn BT" FontWeight="Bold" FontSize="48" BorderThickness="0" Foreground="#BFFF6800"/>
     </Grid>
 </Window>
