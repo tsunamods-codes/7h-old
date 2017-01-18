@@ -45,6 +45,9 @@
                     <awe:WebControl x:Name="webView" Margin="10" Source="http://ovaremake.mooo.com/" d:LayoutOverrides="VerticalAlignment"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Profiles">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
             <TabItem Header="Credits">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
