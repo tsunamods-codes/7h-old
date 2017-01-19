@@ -1334,7 +1334,189 @@ They will be automatically turned off.";
 
         public void externalLaunch(bool debug, bool varDump)
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US", false);
+            /*
+            var sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+            using (var fs = new System.IO.FileStream(@"C:\Iros\temp\Iros.7z", System.IO.FileMode.Open, System.IO.FileAccess.Read)) {
+                using (var archive = ArchiveFactory.Open(fs)) {
+                    using (var reader = archive.ExtractAllEntries()) {
+                        while (reader.MoveToNextEntry()) {
+                            if (!reader.Entry.IsDirectory) {
+                                string path = System.IO.Path.Combine(@"C:\iros\temp", reader.Entry.FilePath);
+                                System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path));
+                                reader.WriteEntryTo(path);
+                                Console.WriteLine(reader.Entry.FilePath);
+                            }
+                        }
+                    }
+                    //archive.WriteToDirectory(@"C:\games\ff7\7thWorkshop\test", SharpCompress.Common.ExtractOptions.Overwrite | SharpCompress.Common.ExtractOptions.ExtractFullPath);
+                }
+            }
+            sw.Stop();
+            */
+            Log.Write("7thHeaven started: " + Sys.Version.ToString());
 
+            Mega.MegaIros.Logger = Log.Write;
+            var dl = new fDownloads();
+            Sys.Downloads = dl;
+            
+            _catFile = System.IO.Path.Combine(Sys.SysFolder, "catalog.xml");
+            try
+            {
+                Sys.Catalog = Util.Deserialize<Catalog>(_catFile);
+            }
+            catch
+            {
+                Sys.Catalog = new Catalog();
+            }
+
+            _context = new _7thWrapperLib.LoaderContext() { VarAliases = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase) };
+            string vfile = System.IO.Path.ChangeExtension(System.Reflection.Assembly.GetExecutingAssembly().Location, ".var");
+            if (System.IO.File.Exists(vfile))
+                foreach (string line in System.IO.File.ReadAllLines(vfile))
+                {
+                    string[] parts = line.Split(new[] { '=' }, 2);
+                    if (parts.Length == 2) _context.VarAliases[parts[0]] = parts[1];
+                }
+
+            Sys.GotoLink += new EventHandler<LinkEventArgs>(Sys_GotoLink);
+
+            _lMods = _cMods = new Dictionary<Guid, pMod>();
+            pTagsC.Init();
+            pTagsL.Init();
+
+            Sys.StatusChanged += new EventHandler<ModStatusEventArgs>(Sys_StatusChanged);
+
+            if (Sys.Settings.MainWindow != null)
+            {
+                Size = new Size(Sys.Settings.MainWindow.W, Sys.Settings.MainWindow.H);
+                var loc = new Point(Sys.Settings.MainWindow.X, Sys.Settings.MainWindow.Y);
+                if (Screen.AllScreens.Any(s => s.Bounds.Contains(loc)))
+                    Location = loc;
+                WindowState = Sys.Settings.MainWindow.State;
+            }
+            cbCompact.Checked = (Sys.Settings.IntOptions & InterfaceOptions.ProfileCollapse) != 0;
+
+            Sys.ActiveProfile = null;
+            System.IO.Directory.CreateDirectory(System.IO.Path.Combine(Sys.SysFolder, "profiles"));
+            if (!String.IsNullOrWhiteSpace(Sys.Settings.CurrentProfile) && System.IO.File.Exists(ProfileFile))
+            {
+                try
+                {
+                    Sys.ActiveProfile = Util.Deserialize<Profile>(ProfileFile);
+                    RefreshProfile();
+                }
+                catch
+                {
+                    Sys.Settings.CurrentProfile = null;
+                }
+            }
+
+            bool showSettings = false;
+            if (Sys.Settings.VersionUpgradeCompleted < Sys.Version)
+                showSettings = true;
+            else
+            {
+                var errors = Sys.Settings.VerifySettings();
+                if (errors.Any())
+                {
+                    string msg = "The following errors were found in your configuration:\n" +
+                        String.Join("\n", errors) + "\n" +
+                        "The settings window will now be displayed so you can fix them.";
+                    MessageBox.Show(this, msg, "Config error");
+                    showSettings = true;
+                }
+            }
+
+            if (showSettings)
+                new fSettings().ShowDialog(this);
+
+            if (Sys.Settings.Options.HasFlag(GeneralOptions.AutoImportMods) && System.IO.Directory.Exists(Sys.Settings.LibraryLocation))
+            {
+                foreach (string folder in System.IO.Directory.GetDirectories(Sys.Settings.LibraryLocation))
+                {
+                    string name = System.IO.Path.GetFileName(folder);
+                    if (!name.EndsWith("temp", StringComparison.InvariantCultureIgnoreCase) && !Sys.Library.PendingDelete.Contains(name, StringComparer.InvariantCultureIgnoreCase))
+                    {
+                        if (!Sys.Library.Items.SelectMany(ii => ii.Versions).Any(v => v.InstalledLocation.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
+                        {
+                            Log.Write("Trying to auto-import file " + folder);
+                            try
+                            {
+                                fImportMod.ImportMod(folder, System.IO.Path.GetFileNameWithoutExtension(folder), false, true);
+                            }
+                            catch (Exception ex)
+                            {
+                                Sys.Message(new WMessage() { Text = "Mod " + name + " failed to import: " + ex.ToString() });
+                                continue;
+                            }
+                            Sys.Message(new WMessage() { Text = "Auto imported mod " + name });
+                        }
+                    }
+                }
+                foreach (string iro in System.IO.Directory.GetFiles(Sys.Settings.LibraryLocation, "*.iro"))
+                {
+                    string name = System.IO.Path.GetFileName(iro);
+                    if (!name.EndsWith("temp", StringComparison.InvariantCultureIgnoreCase) && !Sys.Library.PendingDelete.Contains(name, StringComparer.InvariantCultureIgnoreCase))
+                    {
+                        if (!Sys.Library.Items.SelectMany(ii => ii.Versions).Any(v => v.InstalledLocation.Equals(name, StringComparison.InvariantCultureIgnoreCase)))
+                        {
+                            Log.Write("Trying to auto-import file " + iro);
+                            try
+                            {
+                                fImportMod.ImportMod(iro, System.IO.Path.GetFileNameWithoutExtension(iro), true, true);
+                            }
+                            catch (_7thWrapperLib.IrosArcException)
+                            {
+                                Sys.Message(new WMessage() { Text = "Could not import .iro mod " + System.IO.Path.GetFileNameWithoutExtension(iro) + ", file is corrupt" });
+                                continue;
+                            }
+                            Sys.Message(new WMessage() { Text = "Auto imported mod " + name });
+                        }
+                    }
+                }
+            }
+
+            foreach (var mod in Sys.Library.Items.ToArray())
+            {
+                string fn = System.IO.Path.Combine(Sys.Settings.LibraryLocation, mod.LatestInstalled.InstalledLocation);
+                if (!System.IO.File.Exists(fn) && !System.IO.Directory.Exists(fn))
+                {
+                    Sys.Library.Items.Remove(mod);
+                    var details = mod.CachedDetails ?? new Mod();
+                    Sys.Message(new WMessage { Text = String.Format("Could not find mod {0} - has it been deleted? Removed.", details.Name) });
+                }
+            }
+
+            Sys.Library.AttemptDeletions();
+
+            if (Sys.ActiveProfile == null)
+            {
+                Sys.ActiveProfile = new Profile();
+                Sys.Settings.CurrentProfile = "Default";
+            }
+            Sys.Save();
+
+            System.Threading.ThreadPool.QueueUserWorkItem(BackgroundCatCheck, new CatCheckOptions());
+            if (Sys.Settings.Options.HasFlag(GeneralOptions.CheckForUpdates))
+                System.Threading.ThreadPool.QueueUserWorkItem(UpdateCheck, Sys.Settings.AutoUpdateSource);
+
+            foreach (string parm in Environment.GetCommandLineArgs())
+                if (parm.StartsWith("iros://", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    ProcessIrosLink(parm);
+                }
+                else if (parm.StartsWith("/PROFILE:", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    Sys.Settings.CurrentProfile = parm.Substring(9);
+                    Sys.ActiveProfile = Util.Deserialize<Profile>(ProfileFile);
+                    RefreshProfile();
+                }
+                else if (parm.Equals("/LAUNCH", StringComparison.InvariantCultureIgnoreCase))
+                    bLaunch.PerformClick();
+                else if (parm.Equals("/QUIT", StringComparison.InvariantCultureIgnoreCase))
+                    Application.Exit();
             Launch(debug, varDump);
         }
 
