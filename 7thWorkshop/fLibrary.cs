@@ -1335,27 +1335,8 @@ They will be automatically turned off.";
         public void externalLaunch(bool debug, bool varDump)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US", false);
-            /*
-            var sw = new System.Diagnostics.Stopwatch();
-            sw.Start();
-            using (var fs = new System.IO.FileStream(@"C:\Iros\temp\Iros.7z", System.IO.FileMode.Open, System.IO.FileAccess.Read)) {
-                using (var archive = ArchiveFactory.Open(fs)) {
-                    using (var reader = archive.ExtractAllEntries()) {
-                        while (reader.MoveToNextEntry()) {
-                            if (!reader.Entry.IsDirectory) {
-                                string path = System.IO.Path.Combine(@"C:\iros\temp", reader.Entry.FilePath);
-                                System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path));
-                                reader.WriteEntryTo(path);
-                                Console.WriteLine(reader.Entry.FilePath);
-                            }
-                        }
-                    }
-                    //archive.WriteToDirectory(@"C:\games\ff7\7thWorkshop\test", SharpCompress.Common.ExtractOptions.Overwrite | SharpCompress.Common.ExtractOptions.ExtractFullPath);
-                }
-            }
-            sw.Stop();
-            */
-            Log.Write("7thHeaven started: " + Sys.Version.ToString());
+
+            Log.Write("Launcher started: " + Sys.Version.ToString());
 
             Mega.MegaIros.Logger = Log.Write;
             var dl = new fDownloads();
