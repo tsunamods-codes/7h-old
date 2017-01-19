@@ -14,23 +14,23 @@
         <TextBox x:Name="version" HorizontalAlignment="Left" Height="24.333" Margin="930,704.667,0,0" TextWrapping="Wrap" Text="V 1.0" VerticalAlignment="Top" Width="78" Background="{x:Null}" BorderThickness="0" FontSize="18" FontFamily="Swis721 BT"/>
         <Button x:Name="update" Content="Update" HorizontalAlignment="Left" Height="85" Margin="37.5,630.05,0,0" VerticalAlignment="Top" Width="295" Background="#BF000000" BorderBrush="Black" FontFamily="Swis721 BlkCn BT" FontWeight="Bold" FontSize="48" BorderThickness="0" Foreground="#BFFF6800"/>
         <Button x:Name="launch" Content="Launch" HorizontalAlignment="Left" Height="85" Margin="670,630.05,0,0" VerticalAlignment="Top" Width="295" Click="bLaunch" Background="#BF000000" BorderBrush="Black" FontFamily="Swis721 BlkCn BT" FontWeight="Bold" FontSize="48" BorderThickness="0" Foreground="#BFFF6800"/>
-        <TabControl x:Name="tabControl" Margin="37.5,72.5,53,143">
+        <TabControl x:Name="tabControl" Margin="37.5,72.5,53,143" Background="#BF000000">
             <TabItem Header="Main">
                 <Grid>
                     <ScrollViewer Margin="10,10,10,65.5" Background="Black">
                         <Grid Height="1036.488" Width="788.452"/>
                     </ScrollViewer>
-                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="16.5" Margin="80.833,0,0,44" TextWrapping="Wrap" Text="Difficulty:" VerticalAlignment="Bottom" Width="62.167" FontFamily="Swis721 BlkCn BT" FontSize="14"/>
-                    <RadioButton x:Name="dif_easy" Content="Easy" HorizontalAlignment="Left" Height="15.25" Margin="148,0,0,44.25" VerticalAlignment="Bottom" Width="79.75" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="difficulty"/>
-                    <RadioButton x:Name="dif_normal" Content="Normal" HorizontalAlignment="Left" Height="15.25" Margin="148,0,0,29" VerticalAlignment="Bottom" Width="79.75" RenderTransformOrigin="0.492,1.956" FontFamily="Swis721 BlkCn BT" FontSize="14" IsChecked="True" GroupName="difficulty"/>
-                    <RadioButton x:Name="dif_hard" Content="Hard" HorizontalAlignment="Left" Height="15.25" Margin="148,0,0,13.75" VerticalAlignment="Bottom" Width="79.75" RenderTransformOrigin="0.492,1.956" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="difficulty"/>
-                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="18.427" Margin="283.5,0,0,44" TextWrapping="Wrap" Text="Language:" VerticalAlignment="Bottom" Width="70.5" FontSize="16" FontFamily="Swis721 BlkCn BT"/>
-                    <RadioButton x:Name="lang_en" Content="English" HorizontalAlignment="Left" Height="15.25" Margin="359,0,0,44.25" VerticalAlignment="Bottom" Width="79.75" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="lang" IsChecked="True"/>
-                    <RadioButton x:Name="lang_es" Content="Spanish" HorizontalAlignment="Left" Height="15.25" Margin="359,0,0,29" VerticalAlignment="Bottom" Width="79.75" RenderTransformOrigin="0.492,1.956" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="lang"/>
+                    <TextBlock x:Name="textBlock" Height="16.5" Margin="0,0,378.5,44" TextWrapping="Wrap" Text="Difficulty:" VerticalAlignment="Bottom" FontFamily="Swis721 BlkCn BT" FontSize="14" Foreground="#BFFF6800" HorizontalAlignment="Right" Width="62.167"/>
+                    <RadioButton x:Name="dif_easy" Content="Easy" Height="15.25" Margin="0,0,293.75,44.25" VerticalAlignment="Bottom" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="difficulty" Foreground="#BFFF6800" Background="#BFFF6800" BorderBrush="#00000000" HorizontalAlignment="Right" Width="79.75"/>
+                    <RadioButton x:Name="dif_normal" Content="Normal" Height="15.25" Margin="0,0,293.75,29" VerticalAlignment="Bottom" RenderTransformOrigin="0.492,1.956" FontFamily="Swis721 BlkCn BT" FontSize="14" IsChecked="True" GroupName="difficulty" Foreground="#BFFF6800" Background="#BFFF6800" BorderBrush="#00000000" HorizontalAlignment="Right" Width="79.75"/>
+                    <RadioButton x:Name="dif_hard" Content="Hard" Height="15.25" Margin="0,0,293.75,13.75" VerticalAlignment="Bottom" RenderTransformOrigin="0.492,1.956" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="difficulty" Foreground="#BFFF6800" Background="#BFFF6800" BorderBrush="#00000000" HorizontalAlignment="Right" Width="79.75"/>
+                    <TextBlock x:Name="textBlock1" Height="18.427" Margin="0,0,193.5,44" TextWrapping="Wrap" Text="Language:" VerticalAlignment="Bottom" FontSize="16" FontFamily="Swis721 BlkCn BT" Foreground="#BFFF6800" HorizontalAlignment="Right" Width="70.5"/>
+                    <RadioButton x:Name="lang_en" Content="English" Height="15.25" Margin="0,0,108.75,44.25" VerticalAlignment="Bottom" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="lang" IsChecked="True" Foreground="#BFFF6800" Background="#BFFF6800" BorderBrush="#00000000" HorizontalAlignment="Right" Width="79.75"/>
+                    <RadioButton x:Name="lang_es" Content="Spanish" Height="15.25" Margin="0,0,108.75,29" VerticalAlignment="Bottom" RenderTransformOrigin="0.492,1.956" FontFamily="Swis721 BlkCn BT" FontSize="14" GroupName="lang" Foreground="#BFFF6800" Background="#BFFF6800" BorderBrush="#00000000" HorizontalAlignment="Right" Width="79.75"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Field">
-                <Grid>
+                <Grid Background="#7F000000">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="51*"/>
                         <ColumnDefinition Width="410*"/>
@@ -38,35 +38,52 @@
                 </Grid>
             </TabItem>
             <TabItem Header="World Map">
-                <Grid/>
+                <Grid Background="#7F000000"/>
             </TabItem>
             <TabItem Header="Battle">
-                <Grid/>
+                <Grid Background="#7F000000"/>
             </TabItem>
             <TabItem Header="Mini Game">
-                <Grid/>
+                <Grid Background="#7F000000"/>
             </TabItem>
             <TabItem Header="Music">
-                <Grid/>
+                <Grid Background="#7F000000"/>
             </TabItem>
             <TabItem Header="Videos">
-                <Grid Margin="0,-1.333,0,1.333"/>
+                <Grid Margin="0,-1.333,0,1.333" Background="#7F000000"/>
             </TabItem>
             <TabItem Header="Options">
-                <Grid/>
-            </TabItem>
-            <TabItem Header="Web">
-                <Grid>
-                    <awe:WebControl x:Name="webView" Margin="10" Source="http://ovaremake.mooo.com/" d:LayoutOverrides="VerticalAlignment"/>
+                <Grid Background="#7F000000">
+                    <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="31" Margin="100,64,0,0" TextWrapping="Wrap" Text="Resolution:" VerticalAlignment="Top" Width="167" Foreground="#BFFF6800" FontFamily="Swis721 Blk BT" FontSize="24"/>
+                    <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="100,222.54,0,243" TextWrapping="Wrap" Width="167" FontFamily="Swis721 Blk BT" FontSize="24" Foreground="#BFFF6800"><Run Text="Full Screen:"/><LineBreak/><Run/></TextBlock>
+                    <CheckBox x:Name="checkBox" Content="Enabled" HorizontalAlignment="Left" Height="18" Margin="183.5,0,0,210" VerticalAlignment="Bottom" Width="93" Foreground="#BFFF6800" FontFamily="Swis721 BlkCn BT" FontSize="14"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="20.54" Margin="270.5,100,0,0" TextWrapping="Wrap" Text="1024" VerticalAlignment="Top" Width="83.5"/>
+                    <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="20.54" Margin="270.5,125.54,0,0" TextWrapping="Wrap" Text="768" VerticalAlignment="Top" Width="83.5"/>
+                    <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="46.08" Margin="183.5,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Foreground="#BFFF6800" FontFamily="Swis721 BlkCn BT" FontSize="18"><Run Text="Horizontal"/><LineBreak/><Run Text="Vertial"/></TextBlock>
+                    <TextBlock x:Name="textBlock5_Copy" HorizontalAlignment="Left" Margin="100,0,0,101" TextWrapping="Wrap" Width="176.5" FontFamily="Swis721 Blk BT" FontSize="24" Foreground="#BFFF6800" Height="30" VerticalAlignment="Bottom"><Run Text="Auto Update"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
+                    <CheckBox x:Name="checkBox_Copy" Content="Enabled" HorizontalAlignment="Left" Height="18" Margin="183.5,0,0,68" VerticalAlignment="Bottom" Width="93" Foreground="#BFFF6800" FontFamily="Swis721 BlkCn BT" FontSize="14"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Profiles">
-                <Grid/>
+                <Grid Background="#7F000000">
+                    <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="35" Margin="100,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Foreground="#BFFF6800" FontSize="24" FontFamily="Swis721 Blk BT" Text="Profiles:"/>
+                    <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="24" Margin="250.5,192.04,0,0" VerticalAlignment="Top" Width="154" Foreground="Black">
+                        <ComboBoxItem Content="Original Mode" IsSelected="True"/>
+                        <ComboBoxItem Content="HD Mode"/>
+                        <ComboBoxItem Content="Custom Mode"/>
+                    </ComboBox>
+                    <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="37.5" Margin="108.5,149.54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" Foreground="#BFFF6800" Text="Enables you to select bettwen a original graphics game experience, HD or a custom one"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Web">
+                <Grid Background="#7F000000">
+                    <awe:WebControl x:Name="webView" Margin="10" Source="http://ovaremake.mooo.com/" d:LayoutOverrides="VerticalAlignment"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Credits">
-                <Grid/>
+                <Grid Background="#7F000000"/>
             </TabItem>
         </TabControl>
-        <TextBlock x:Name="game_name" Height="57.5" Margin="57,10,491,0" TextWrapping="Wrap" Text="OVA Remake" VerticalAlignment="Top" Foreground="#FFA86B00" FontSize="48" FontFamily="Swis721 BlkEx BT"/>
+        <TextBlock x:Name="game_name" Height="57.5" Margin="57,10,491,0" TextWrapping="Wrap" Text="OVA Remake" VerticalAlignment="Top" Foreground="#BFFF6800" FontSize="48" FontFamily="Swis721 BlkEx BT"/>
     </Grid>
 </Window>
