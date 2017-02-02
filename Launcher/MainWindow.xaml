@@ -55,11 +55,11 @@
             <TabItem Header="Options">
                 <Grid Background="#7F000000">
                     <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="31" Margin="100,64,0,0" TextWrapping="Wrap" Text="Resolution:" VerticalAlignment="Top" Width="167" Foreground="#BFFF6800" FontFamily="Swis721 Blk BT" FontSize="24"/>
-                    <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="100,222.54,0,243" TextWrapping="Wrap" Width="167" FontFamily="Swis721 Blk BT" FontSize="24" Foreground="#BFFF6800"><Run Text="Full Screen:"/><LineBreak/><Run/></TextBlock>
-                    <CheckBox x:Name="checkBox" Content="Enabled" HorizontalAlignment="Left" Height="18" Margin="183.5,0,0,210" VerticalAlignment="Bottom" Width="93" Foreground="#BFFF6800" FontFamily="Swis721 BlkCn BT" FontSize="14"/>
+                    <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="100,211.54,0,0" TextWrapping="Wrap" Width="176.5" FontFamily="Swis721 Blk BT" FontSize="24" Foreground="#BFFF6800" Height="35" VerticalAlignment="Top"><Run Text="Full Screen:"/><LineBreak/><Run/></TextBlock>
+                    <CheckBox x:Name="checkBox" Content="Enabled" HorizontalAlignment="Left" Height="18" Margin="183.5,0,0,203.997" VerticalAlignment="Bottom" Width="93" Foreground="#BFFF6800" FontFamily="Swis721 BlkCn BT" FontSize="14"/>
                     <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="20.54" Margin="270.5,100,0,0" TextWrapping="Wrap" Text="1024" VerticalAlignment="Top" Width="83.5"/>
                     <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="20.54" Margin="270.5,125.54,0,0" TextWrapping="Wrap" Text="768" VerticalAlignment="Top" Width="83.5"/>
-                    <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="46.08" Margin="183.5,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Foreground="#BFFF6800" FontFamily="Swis721 BlkCn BT" FontSize="18"><Run Text="Horizontal"/><LineBreak/><Run Text="Vertial"/></TextBlock>
+                    <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="46.08" Margin="183.5,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Foreground="#BFFF6800" FontFamily="Swis721 BlkCn BT" FontSize="18"><Run Text="Horizontal"/><LineBreak/><Run Text="Verti"/><Run Text="c"/><Run Text="al"/></TextBlock>
                     <TextBlock x:Name="textBlock5_Copy" HorizontalAlignment="Left" Margin="100,0,0,101" TextWrapping="Wrap" Width="176.5" FontFamily="Swis721 Blk BT" FontSize="24" Foreground="#BFFF6800" Height="30" VerticalAlignment="Bottom"><Run Text="Auto Update"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
                     <CheckBox x:Name="checkBox_Copy" Content="Enabled" HorizontalAlignment="Left" Height="18" Margin="183.5,0,0,68" VerticalAlignment="Bottom" Width="93" Foreground="#BFFF6800" FontFamily="Swis721 BlkCn BT" FontSize="14"/>
                 </Grid>
