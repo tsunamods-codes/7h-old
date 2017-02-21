@@ -47,19 +47,19 @@ namespace Iros._7th.Workshop {
             this.bNewProfile = new System.Windows.Forms.Button();
             this.lProfile = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pTagsL = new Iros._7th.Workshop.pTags();
             this.pSearchResultsL = new System.Windows.Forms.Panel();
             this.lSearchL = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bRefreshL = new System.Windows.Forms.Button();
             this.bImport = new System.Windows.Forms.Button();
             this.bTagsL = new System.Windows.Forms.Button();
             this.bSearchL = new System.Windows.Forms.Button();
             this.txtSearchL = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pTagsC = new Iros._7th.Workshop.pTags();
             this.pSearchResultsC = new System.Windows.Forms.Panel();
             this.lSearchC = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.bTagsC = new System.Windows.Forms.Button();
             this.bSearchC = new System.Windows.Forms.Button();
             this.txtSearchC = new System.Windows.Forms.TextBox();
@@ -84,6 +84,10 @@ namespace Iros._7th.Workshop {
             this.chunkToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pTagsL = new Iros._7th.Workshop.pTags();
+            this.pTagsC = new Iros._7th.Workshop.pTags();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.TC.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.pProfileOuter.SuspendLayout();
@@ -108,7 +112,7 @@ namespace Iros._7th.Workshop {
             this.TC.Location = new System.Drawing.Point(0, 24);
             this.TC.Name = "TC";
             this.TC.SelectedIndex = 0;
-            this.TC.Size = new System.Drawing.Size(520, 377);
+            this.TC.Size = new System.Drawing.Size(700, 377);
             this.TC.TabIndex = 0;
             this.TC.SelectedIndexChanged += new System.EventHandler(this.TC_SelectedIndexChanged);
             // 
@@ -122,8 +126,8 @@ namespace Iros._7th.Workshop {
             this.tabPage1.Controls.Add(this.lProfile);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(512, 348);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(692, 348);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Active Mods";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -174,7 +178,7 @@ namespace Iros._7th.Workshop {
             this.pProfileOuter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pProfileOuter.Location = new System.Drawing.Point(3, 33);
             this.pProfileOuter.Name = "pProfileOuter";
-            this.pProfileOuter.Size = new System.Drawing.Size(506, 271);
+            this.pProfileOuter.Size = new System.Drawing.Size(686, 271);
             this.pProfileOuter.TabIndex = 7;
             // 
             // pProfile
@@ -183,7 +187,7 @@ namespace Iros._7th.Workshop {
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pProfile.Location = new System.Drawing.Point(0, 0);
             this.pProfile.Name = "pProfile";
-            this.pProfile.Size = new System.Drawing.Size(506, 89);
+            this.pProfile.Size = new System.Drawing.Size(686, 89);
             this.pProfile.TabIndex = 0;
             // 
             // panel2
@@ -196,7 +200,7 @@ namespace Iros._7th.Workshop {
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(3, 304);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(506, 41);
+            this.panel2.Size = new System.Drawing.Size(686, 41);
             this.panel2.TabIndex = 9;
             // 
             // bProfileDetails
@@ -204,7 +208,7 @@ namespace Iros._7th.Workshop {
             this.bProfileDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bProfileDetails.BackColor = System.Drawing.Color.LightGray;
             this.bProfileDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bProfileDetails.Location = new System.Drawing.Point(146, 7);
+            this.bProfileDetails.Location = new System.Drawing.Point(326, 7);
             this.bProfileDetails.Name = "bProfileDetails";
             this.bProfileDetails.Size = new System.Drawing.Size(101, 27);
             this.bProfileDetails.TabIndex = 5;
@@ -217,7 +221,7 @@ namespace Iros._7th.Workshop {
             this.bOpenProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bOpenProfile.BackColor = System.Drawing.Color.LightGray;
             this.bOpenProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bOpenProfile.Location = new System.Drawing.Point(398, 7);
+            this.bOpenProfile.Location = new System.Drawing.Point(578, 7);
             this.bOpenProfile.Name = "bOpenProfile";
             this.bOpenProfile.Size = new System.Drawing.Size(101, 27);
             this.bOpenProfile.TabIndex = 4;
@@ -267,7 +271,7 @@ namespace Iros._7th.Workshop {
             this.bNewProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bNewProfile.BackColor = System.Drawing.Color.LightGray;
             this.bNewProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bNewProfile.Location = new System.Drawing.Point(291, 7);
+            this.bNewProfile.Location = new System.Drawing.Point(471, 7);
             this.bNewProfile.Name = "bNewProfile";
             this.bNewProfile.Size = new System.Drawing.Size(101, 27);
             this.bNewProfile.TabIndex = 0;
@@ -283,8 +287,8 @@ namespace Iros._7th.Workshop {
             this.lProfile.ForeColor = System.Drawing.Color.Gainsboro;
             this.lProfile.Location = new System.Drawing.Point(3, 3);
             this.lProfile.Name = "lProfile";
-            this.lProfile.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.lProfile.Size = new System.Drawing.Size(506, 30);
+            this.lProfile.Padding = new System.Windows.Forms.Padding(5);
+            this.lProfile.Size = new System.Drawing.Size(686, 30);
             this.lProfile.TabIndex = 6;
             // 
             // tabPage2
@@ -295,21 +299,11 @@ namespace Iros._7th.Workshop {
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(770, 358);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(692, 348);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Library";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pTagsL
-            // 
-            this.pTagsL.Location = new System.Drawing.Point(489, 63);
-            this.pTagsL.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.pTagsL.Name = "pTagsL";
-            this.pTagsL.Size = new System.Drawing.Size(242, 243);
-            this.pTagsL.TabIndex = 7;
-            this.pTagsL.Visible = false;
-            this.pTagsL.SelectionChanged += new System.EventHandler(this.pTagsL_SelectionChanged);
             // 
             // pSearchResultsL
             // 
@@ -318,7 +312,7 @@ namespace Iros._7th.Workshop {
             this.pSearchResultsL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pSearchResultsL.Location = new System.Drawing.Point(3, 92);
             this.pSearchResultsL.Name = "pSearchResultsL";
-            this.pSearchResultsL.Size = new System.Drawing.Size(764, 263);
+            this.pSearchResultsL.Size = new System.Drawing.Size(686, 253);
             this.pSearchResultsL.TabIndex = 1;
             // 
             // lSearchL
@@ -329,12 +323,13 @@ namespace Iros._7th.Workshop {
             this.lSearchL.ForeColor = System.Drawing.Color.Gainsboro;
             this.lSearchL.Location = new System.Drawing.Point(3, 65);
             this.lSearchL.Name = "lSearchL";
-            this.lSearchL.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.lSearchL.Size = new System.Drawing.Size(764, 27);
+            this.lSearchL.Padding = new System.Windows.Forms.Padding(5);
+            this.lSearchL.Size = new System.Drawing.Size(686, 27);
             this.lSearchL.TabIndex = 5;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bRefreshL);
             this.groupBox1.Controls.Add(this.bImport);
             this.groupBox1.Controls.Add(this.bTagsL);
             this.groupBox1.Controls.Add(this.bSearchL);
@@ -342,18 +337,29 @@ namespace Iros._7th.Workshop {
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(764, 62);
+            this.groupBox1.Size = new System.Drawing.Size(686, 62);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
             // 
+            // bRefreshL
+            // 
+            this.bRefreshL.Location = new System.Drawing.Point(424, 23);
+            this.bRefreshL.Name = "bRefreshL";
+            this.bRefreshL.Size = new System.Drawing.Size(85, 26);
+            this.bRefreshL.TabIndex = 3;
+            this.bRefreshL.Text = "Refresh";
+            this.bRefreshL.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bRefreshL.UseVisualStyleBackColor = true;
+            this.bRefreshL.Click += new System.EventHandler(this.bRefreshL_Click);
+            // 
             // bImport
             // 
             this.bImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bImport.Location = new System.Drawing.Point(664, 23);
+            this.bImport.Location = new System.Drawing.Point(586, 23);
             this.bImport.Name = "bImport";
             this.bImport.Size = new System.Drawing.Size(85, 26);
-            this.bImport.TabIndex = 3;
+            this.bImport.TabIndex = 4;
             this.bImport.Text = "Import...";
             this.bImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bImport.UseVisualStyleBackColor = true;
@@ -361,7 +367,7 @@ namespace Iros._7th.Workshop {
             // 
             // bTagsL
             // 
-            this.bTagsL.Location = new System.Drawing.Point(441, 23);
+            this.bTagsL.Location = new System.Drawing.Point(333, 23);
             this.bTagsL.Name = "bTagsL";
             this.bTagsL.Size = new System.Drawing.Size(85, 26);
             this.bTagsL.TabIndex = 2;
@@ -373,7 +379,7 @@ namespace Iros._7th.Workshop {
             // bSearchL
             // 
             this.bSearchL.Image = global::Iros._7th.Workshop.Properties.Resources.SearchFolderHS;
-            this.bSearchL.Location = new System.Drawing.Point(350, 23);
+            this.bSearchL.Location = new System.Drawing.Point(242, 23);
             this.bSearchL.Name = "bSearchL";
             this.bSearchL.Size = new System.Drawing.Size(85, 26);
             this.bSearchL.TabIndex = 1;
@@ -387,7 +393,7 @@ namespace Iros._7th.Workshop {
             this.txtSearchL.AcceptsReturn = true;
             this.txtSearchL.Location = new System.Drawing.Point(6, 25);
             this.txtSearchL.Name = "txtSearchL";
-            this.txtSearchL.Size = new System.Drawing.Size(338, 22);
+            this.txtSearchL.Size = new System.Drawing.Size(230, 22);
             this.txtSearchL.TabIndex = 0;
             this.txtSearchL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchL_KeyPress);
             // 
@@ -399,21 +405,11 @@ namespace Iros._7th.Workshop {
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(770, 358);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(692, 348);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Catalog";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // pTagsC
-            // 
-            this.pTagsC.Location = new System.Drawing.Point(484, 62);
-            this.pTagsC.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
-            this.pTagsC.Name = "pTagsC";
-            this.pTagsC.Size = new System.Drawing.Size(251, 241);
-            this.pTagsC.TabIndex = 8;
-            this.pTagsC.Visible = false;
-            this.pTagsC.SelectionChanged += new System.EventHandler(this.pTagsC_SelectionChanged);
             // 
             // pSearchResultsC
             // 
@@ -422,7 +418,7 @@ namespace Iros._7th.Workshop {
             this.pSearchResultsC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pSearchResultsC.Location = new System.Drawing.Point(3, 92);
             this.pSearchResultsC.Name = "pSearchResultsC";
-            this.pSearchResultsC.Size = new System.Drawing.Size(764, 263);
+            this.pSearchResultsC.Size = new System.Drawing.Size(686, 253);
             this.pSearchResultsC.TabIndex = 3;
             // 
             // lSearchC
@@ -433,26 +429,38 @@ namespace Iros._7th.Workshop {
             this.lSearchC.ForeColor = System.Drawing.Color.Gainsboro;
             this.lSearchC.Location = new System.Drawing.Point(3, 65);
             this.lSearchC.Name = "lSearchC";
-            this.lSearchC.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.lSearchC.Size = new System.Drawing.Size(764, 27);
+            this.lSearchC.Padding = new System.Windows.Forms.Padding(5);
+            this.lSearchC.Size = new System.Drawing.Size(686, 27);
             this.lSearchC.TabIndex = 4;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.bTagsC);
             this.groupBox2.Controls.Add(this.bSearchC);
             this.groupBox2.Controls.Add(this.txtSearchC);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(764, 62);
+            this.groupBox2.Size = new System.Drawing.Size(686, 62);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(424, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 26);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Refresh";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.bRefreshC_Click);
+            // 
             // bTagsC
             // 
-            this.bTagsC.Location = new System.Drawing.Point(441, 23);
+            this.bTagsC.Location = new System.Drawing.Point(333, 23);
             this.bTagsC.Name = "bTagsC";
             this.bTagsC.Size = new System.Drawing.Size(85, 26);
             this.bTagsC.TabIndex = 2;
@@ -464,7 +472,7 @@ namespace Iros._7th.Workshop {
             // bSearchC
             // 
             this.bSearchC.Image = global::Iros._7th.Workshop.Properties.Resources.SearchFolderHS;
-            this.bSearchC.Location = new System.Drawing.Point(350, 23);
+            this.bSearchC.Location = new System.Drawing.Point(242, 23);
             this.bSearchC.Name = "bSearchC";
             this.bSearchC.Size = new System.Drawing.Size(85, 26);
             this.bSearchC.TabIndex = 1;
@@ -478,7 +486,7 @@ namespace Iros._7th.Workshop {
             this.txtSearchC.AcceptsReturn = true;
             this.txtSearchC.Location = new System.Drawing.Point(6, 25);
             this.txtSearchC.Name = "txtSearchC";
-            this.txtSearchC.Size = new System.Drawing.Size(338, 22);
+            this.txtSearchC.Size = new System.Drawing.Size(230, 22);
             this.txtSearchC.TabIndex = 0;
             this.txtSearchC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchC_KeyPress);
             // 
@@ -487,9 +495,9 @@ namespace Iros._7th.Workshop {
             this.pMessages.AutoScroll = true;
             this.pMessages.Controls.Add(this.bClearAllMsg);
             this.pMessages.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pMessages.Location = new System.Drawing.Point(520, 24);
+            this.pMessages.Location = new System.Drawing.Point(700, 24);
             this.pMessages.Name = "pMessages";
-            this.pMessages.Size = new System.Drawing.Size(198, 377);
+            this.pMessages.Size = new System.Drawing.Size(136, 377);
             this.pMessages.TabIndex = 1;
             // 
             // bClearAllMsg
@@ -498,7 +506,7 @@ namespace Iros._7th.Workshop {
             this.bClearAllMsg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bClearAllMsg.Location = new System.Drawing.Point(0, 0);
             this.bClearAllMsg.Name = "bClearAllMsg";
-            this.bClearAllMsg.Size = new System.Drawing.Size(198, 23);
+            this.bClearAllMsg.Size = new System.Drawing.Size(136, 23);
             this.bClearAllMsg.TabIndex = 0;
             this.bClearAllMsg.Text = "Clear All";
             this.bClearAllMsg.UseVisualStyleBackColor = true;
@@ -509,7 +517,7 @@ namespace Iros._7th.Workshop {
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.statusStrip.Location = new System.Drawing.Point(0, 401);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(718, 22);
+            this.statusStrip.Size = new System.Drawing.Size(836, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -574,21 +582,23 @@ namespace Iros._7th.Workshop {
             this.workshopToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(718, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(836, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // workshopToolStripMenuItem
             // 
             this.workshopToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showDownloadsWindowToolStripMenuItem,
             this.settingsToolStripMenuItem,
-            this.checkSubscriptionsNowToolStripMenuItem,
-            this.toolStripMenuItem2,
             this.openGLDriverConfigurationToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.checkSubscriptionsNowToolStripMenuItem,
+            this.toolStripSeparator2,
             this.modGeneratorAssistantToolStripMenuItem,
             this.packUnpackiroArchivesToolStripMenuItem,
             this.chunkToolToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.showDownloadsWindowToolStripMenuItem,
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.workshopToolStripMenuItem.Name = "workshopToolStripMenuItem";
@@ -598,74 +608,104 @@ namespace Iros._7th.Workshop {
             // showDownloadsWindowToolStripMenuItem
             // 
             this.showDownloadsWindowToolStripMenuItem.Name = "showDownloadsWindowToolStripMenuItem";
-            this.showDownloadsWindowToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.showDownloadsWindowToolStripMenuItem.Text = "Show Downloads Window";
+            this.showDownloadsWindowToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.showDownloadsWindowToolStripMenuItem.Text = "Toggle Downloads Window";
             this.showDownloadsWindowToolStripMenuItem.Click += new System.EventHandler(this.showDownloadsWindowToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.settingsToolStripMenuItem.Text = "General Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // checkSubscriptionsNowToolStripMenuItem
             // 
             this.checkSubscriptionsNowToolStripMenuItem.Name = "checkSubscriptionsNowToolStripMenuItem";
-            this.checkSubscriptionsNowToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.checkSubscriptionsNowToolStripMenuItem.Text = "Check subscriptions now";
+            this.checkSubscriptionsNowToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.checkSubscriptionsNowToolStripMenuItem.Text = "Update Catalog";
             this.checkSubscriptionsNowToolStripMenuItem.Click += new System.EventHandler(this.checkSubscriptionsNowToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(222, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(216, 6);
             // 
             // openGLDriverConfigurationToolStripMenuItem
             // 
             this.openGLDriverConfigurationToolStripMenuItem.Name = "openGLDriverConfigurationToolStripMenuItem";
-            this.openGLDriverConfigurationToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.openGLDriverConfigurationToolStripMenuItem.Text = "OpenGL driver configuration";
+            this.openGLDriverConfigurationToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.openGLDriverConfigurationToolStripMenuItem.Text = "Aali Driver Settings";
             this.openGLDriverConfigurationToolStripMenuItem.Click += new System.EventHandler(this.openGLDriverConfigurationToolStripMenuItem_Click);
             // 
             // modGeneratorAssistantToolStripMenuItem
             // 
             this.modGeneratorAssistantToolStripMenuItem.Name = "modGeneratorAssistantToolStripMenuItem";
-            this.modGeneratorAssistantToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.modGeneratorAssistantToolStripMenuItem.Text = "Mod Generator Assistant";
+            this.modGeneratorAssistantToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.modGeneratorAssistantToolStripMenuItem.Text = "Catalog Creation Tool";
             this.modGeneratorAssistantToolStripMenuItem.Click += new System.EventHandler(this.modGeneratorAssistantToolStripMenuItem_Click);
             // 
             // packUnpackiroArchivesToolStripMenuItem
             // 
             this.packUnpackiroArchivesToolStripMenuItem.Name = "packUnpackiroArchivesToolStripMenuItem";
-            this.packUnpackiroArchivesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.packUnpackiroArchivesToolStripMenuItem.Text = "Pack/Unpack .iro archives";
+            this.packUnpackiroArchivesToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.packUnpackiroArchivesToolStripMenuItem.Text = "IRO Creation Tool";
             this.packUnpackiroArchivesToolStripMenuItem.Click += new System.EventHandler(this.packUnpackiroArchivesToolStripMenuItem_Click);
             // 
             // chunkToolToolStripMenuItem
             // 
             this.chunkToolToolStripMenuItem.Name = "chunkToolToolStripMenuItem";
-            this.chunkToolToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.chunkToolToolStripMenuItem.Text = "Chunk tool";
+            this.chunkToolToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.chunkToolToolStripMenuItem.Text = "Chunk Tool";
             this.chunkToolToolStripMenuItem.Click += new System.EventHandler(this.chunkToolToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(222, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(216, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // pTagsL
+            // 
+            this.pTagsL.Location = new System.Drawing.Point(489, 63);
+            this.pTagsL.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.pTagsL.Name = "pTagsL";
+            this.pTagsL.Size = new System.Drawing.Size(242, 243);
+            this.pTagsL.TabIndex = 7;
+            this.pTagsL.Visible = false;
+            this.pTagsL.SelectionChanged += new System.EventHandler(this.pTagsL_SelectionChanged);
+            // 
+            // pTagsC
+            // 
+            this.pTagsC.Location = new System.Drawing.Point(484, 62);
+            this.pTagsC.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
+            this.pTagsC.Name = "pTagsC";
+            this.pTagsC.Size = new System.Drawing.Size(251, 241);
+            this.pTagsC.TabIndex = 8;
+            this.pTagsC.Visible = false;
+            this.pTagsC.SelectionChanged += new System.EventHandler(this.pTagsC_SelectionChanged);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(216, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(216, 6);
             // 
             // fLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 423);
+            this.ClientSize = new System.Drawing.Size(836, 423);
             this.Controls.Add(this.TC);
             this.Controls.Add(this.pMessages);
             this.Controls.Add(this.statusStrip);
@@ -753,6 +793,10 @@ namespace Iros._7th.Workshop {
         private System.Windows.Forms.Button bGLConfig;
         private System.Windows.Forms.ToolStripMenuItem openGLDriverConfigurationToolStripMenuItem;
         private System.Windows.Forms.Button bProfileDetails;
+        private System.Windows.Forms.Button bRefreshL;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

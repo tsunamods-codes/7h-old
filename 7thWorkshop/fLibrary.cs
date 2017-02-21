@@ -25,6 +25,7 @@ namespace Iros._7th.Workshop {
         private string _catFile;
         private Dictionary<Guid, pMod> _lMods, _cMods;
         private _7thWrapperLib.LoaderContext _context;
+        private fDownloads dl;
 
         private void fLibrary_Load(object sender, EventArgs e) {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US", false);
@@ -51,9 +52,10 @@ namespace Iros._7th.Workshop {
             Log.Write("7thHeaven started: " + Sys.Version.ToString());
             
             Mega.MegaIros.Logger = Log.Write;
-            var dl = new fDownloads();
-            Sys.Downloads = dl; 
-            dl.Show();
+
+            this.dl = new fDownloads();
+            Sys.Downloads = this.dl;
+            this.dl.Show();
 
             try {
                 string src = System.IO.Path.Combine(Sys._7HFolder, "SharpCompressU.cpy");
@@ -998,8 +1000,18 @@ They will be automatically turned off.";
             DoSearch(pSearchResultsC, Sys.Catalog.Mods, txtSearchC.Text, new HashSet<string>(pTagsC.Selected), lSearchC, ref _cMods, null, pMod.ModBarState.None, false, true);
         }
 
+        private void bRefreshC_Click(object sender, EventArgs e)
+        {
+            DoSearch(pSearchResultsC, Sys.Catalog.Mods, "", new HashSet<string>(pTagsC.Selected), lSearchC, ref _cMods, null, pMod.ModBarState.None, false, true);
+        }
+
         private void bSearchL_Click(object sender, EventArgs e) {
             DoSearch(pSearchResultsL, Sys.Library.Items.Select(i => i.CachedDetails), txtSearchL.Text, new HashSet<string>(pTagsL.Selected), lSearchL, ref _lMods, mMod, pMod.ModBarState.Activate, true, false);
+        }
+
+        private void bRefreshL_Click(object sender, EventArgs e)
+        {
+            DoSearch(pSearchResultsL, Sys.Library.Items.Select(i => i.CachedDetails), "", new HashSet<string>(pTagsL.Selected), lSearchL, ref _lMods, mMod, pMod.ModBarState.Activate, true, false);
         }
 
         private void uninstallToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -1088,7 +1100,8 @@ They will be automatically turned off.";
         }
 
         private void showDownloadsWindowToolStripMenuItem_Click(object sender, EventArgs e) {
-            Sys.Downloads.BringToFront();
+            this.dl.Show();
+            this.dl.BringToFront();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -1327,10 +1340,12 @@ They will be automatically turned off.";
                     break;
                 case 1:
                     pSearchResultsL.Focus();
+                    bRefreshL_Click(sender, e);
                     break;
 
                 case 2:
                     pSearchResultsC.Focus();
+                    bRefreshC_Click(sender, e);
                     break;
             }
         }
