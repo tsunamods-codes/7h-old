@@ -4,8 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
-        mc:Ignorable="d" Height="350" Width="525" WindowStartupLocation="CenterScreen">
-    <Grid>
-        
-    </Grid>
+        mc:Ignorable="d" Height="533" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Window.Background>
+        <ImageBrush ImageSource="BG.png"/>
+    </Window.Background>
+    <Canvas HorizontalAlignment="Left" Height="491" Margin="10,10,0,0" VerticalAlignment="Top" Width="776">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="425" VerticalAlignment="Top" Width="780" Background="#CA000000" Canvas.Top="10">
+            <TabItem x:Name="Main" Header="Main" Background="White">
+                <Grid Background="#26000000" Margin="0,0,9,-8"/>
+            </TabItem>
+            <TabItem x:Name="Library" Header="Library" Background="White">
+                <Grid Background="#26000000"/>
+            </TabItem>
+            <TabItem x:Name="Donloads" Header="Downloads" Background="White">
+                <Grid Background="#26000000"/>
+            </TabItem>
+            <TabItem x:Name="Settings" Header="Settings" Background="White">
+                <Grid Background="#26000000"/>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="Launch" Content="Play" Height="36" Canvas.Left="550" Canvas.Top="445" Width="170"/>
+    </Canvas>
 </Window>
