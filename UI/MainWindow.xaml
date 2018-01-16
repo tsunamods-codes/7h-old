@@ -4,25 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
-        mc:Ignorable="d" Height="533" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStyle="ToolWindow" Icon="7H.ico" ResizeMode="NoResize" Title="7th Heaven" Width="800" Height="600" MinWidth="800" MinHeight="600">
     <Window.Background>
         <ImageBrush ImageSource="BG.png"/>
     </Window.Background>
-    <Canvas HorizontalAlignment="Left" Height="491" Margin="10,10,0,0" VerticalAlignment="Top" Width="776">
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="425" VerticalAlignment="Top" Width="780" Background="#CA000000" Canvas.Top="10">
-            <TabItem x:Name="Main" Header="Main" Background="White">
-                <Grid Background="#26000000" Margin="0,0,9,-8"/>
+    <Canvas HorizontalAlignment="Center" Margin="2,2,0,0" VerticalAlignment="Center">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#CA000000" Canvas.Top="-275" Canvas.Left="-384" Height="500" Width="768" Panel.ZIndex="-1">
+            <TabItem x:Name="Main" Header="Main" Background="White" Width="80"/>
+            <TabItem x:Name="Library" Header="Library" Background="White" Width="80">
+                <ListView x:Name="listView" Margin="32.5,34.5,32,32.54" Background="{x:Null}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </TabItem>
-            <TabItem x:Name="Library" Header="Library" Background="White">
-                <Grid Background="#26000000"/>
+            <TabItem x:Name="Downloads" Header="Downloads" Background="White" Width="80">
+                <ListView x:Name="listView1" Margin="25,24,23,28.04" Background="{x:Null}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </TabItem>
-            <TabItem x:Name="Donloads" Header="Downloads" Background="White">
-                <Grid Background="#26000000"/>
+            <TabItem x:Name="Settings" Header="Settings" Background="White" Width="80">
+                <TabControl x:Name="tabControl1" Margin="7,6.333,6,3.207" Background="{x:Null}">
+                    <TabItem Header="Game" Width="80">
+                        <Grid/>
+                    </TabItem>
+                    <TabItem Header="Repositories" Width="80">
+                        <Grid>
+                            <ListView x:Name="listView2" Margin="21,19.747,50,38.293">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
             </TabItem>
-            <TabItem x:Name="Settings" Header="Settings" Background="White">
-                <Grid Background="#26000000"/>
+            <TabItem Header="TabItem" HorizontalAlignment="Left" Width="54" Margin="-2,-2,0,2">
+                <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
-        <Button x:Name="Launch" Content="Play" Height="36" Canvas.Left="550" Canvas.Top="445" Width="170"/>
+        <Button x:Name="button_Launch" Content="Launch" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="170" Canvas.Left="185" Canvas.Top="232" />
+        <Button x:Name="button_Quit" Content="Quit" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="170" Canvas.Left="-365.5" Canvas.Top="230.5"/>
     </Canvas>
 </Window>

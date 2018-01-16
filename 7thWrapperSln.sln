@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7thWrapperLib", "7thWrapperLib\7thWrapperLib.csproj", "{F80DB232-4102-4249-8B31-2DDD5C7FA404}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7thHeaven.Code", "7thHeaven.Code\7thHeaven.Code.csproj", "{CD2F4CCB-4735-4DEE-8867-B0ED2CA04303}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{CC1FE811-CF62-4648-88D4-D8E2386461EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixClient", "MatrixClient\MatrixClient.csproj", "{873F3C12-B521-4649-9670-0C73D1BCA1C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,9 +161,28 @@ Global
 		{CC1FE811-CF62-4648-88D4-D8E2386461EA}.Release|Win32.Build.0 = Release|Any CPU
 		{CC1FE811-CF62-4648-88D4-D8E2386461EA}.Release|x86.ActiveCfg = Release|Any CPU
 		{CC1FE811-CF62-4648-88D4-D8E2386461EA}.Release|x86.Build.0 = Release|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Debug|Win32.Build.0 = Debug|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Debug|x86.Build.0 = Debug|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Release|Win32.ActiveCfg = Release|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Release|Win32.Build.0 = Release|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Release|x86.ActiveCfg = Release|Any CPU
+		{873F3C12-B521-4649-9670-0C73D1BCA1C1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90731605-4A95-42F3-9266-C7699E9FBCB3}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		version = 1.56
